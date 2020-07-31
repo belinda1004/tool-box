@@ -30,3 +30,6 @@ The small but useful tools that I wrote.
 # 6. Merge files
     merge_filys_to_one_folder.py
     Merge files in a given path(including the files contained in all the sub-folders) into another given path.
+
+# 7. Batch add prefix or suffix to filenames
+    add_suffix_or_prefix_to_filenames.py

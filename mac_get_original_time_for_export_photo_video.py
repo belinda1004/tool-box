@@ -50,9 +50,6 @@ IMAGE_PREF = 'IMG_'
 VIDEO_PREF = 'VIDEO_'
 # ==============================================================================
 
-PROCESS_PHOTO_CNT = 0
-PROCESS_VIDEO_CNT = 0
-
 # Gets photos' actual creation time from the EXIF information
 def get_photo_act_crt_time(photo):
     original_date_tag_no = 0x9003
@@ -117,21 +114,23 @@ def modify_file_name(file, pref, act_time):
         os.rename(file, file_path)
 
 def get_photo_and_video_orignal_time(path):
-    global PROCESS_PHOTO_CNT,PROCESS_VIDEO_CNT
+    photo_count = 0
+    video_count = 0
     walk = os.walk(path)
     for path, dir_list, file_list in walk:
         for file in file_list:
             if file.endswith('.jpeg') or file.endswith('.tiff') or file.endswith('.png'):
                 if modify_photo_name_by_date(os.path.join(path,file),path):
-                    PROCESS_PHOTO_CNT += 1
+                    photo_count += 1
             elif file.endswith('.mov')  :
                 if modify_video_name_by_act_date(os.path.join(path,file), path):
-                    PROCESS_VIDEO_CNT += 1
+                    video_count += 1
             else:
                 print('Can\'t process ' + file)
+    print('Processed: %d photoes and %d videos.' % (photo_count, video_count))
 
 
 get_photo_and_video_orignal_time(PHOTO_PATH)
-print('Processed: %d photoes and %d videos.' % (PROCESS_PHOTO_CNT, PROCESS_VIDEO_CNT))
+
 
 
