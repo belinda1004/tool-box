@@ -33,3 +33,7 @@ The small but useful tools that I wrote.
 
 # 7. Batch add prefix or suffix to filenames
     add_suffix_or_prefix_to_filenames.py
+
+# 8. Inquiry the most starred projects on Github by language
+    github_most_starred_projects.py
+    Get the top 30 most starred projects on Github by language, generate a bar chart by the inquiry result. Click each bar to open the home page of the project.

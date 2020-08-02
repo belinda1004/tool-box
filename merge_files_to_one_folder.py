@@ -16,7 +16,7 @@ def merge_files(orig_root_path, dest_path):
             shutil.move(os.path.join(path,file), dest_path)
 
 
-orig_root_path = '/Users/belindawang/Pictures/Export_photoes/'
-dest_path = '/Users/belindawang/Pictures/Export_photoes/'
+orig_root_path = '/Users/yutingwang/Pictures/Export_photoes'
+dest_path = '/Users/yutingwang/Pictures/Export_photoes'
 
 merge_files(orig_root_path,dest_path)
